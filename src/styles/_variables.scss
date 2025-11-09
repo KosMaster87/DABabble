@@ -1,0 +1,27 @@
+/* CSS Custom Properties (Variables)
+ * Global variables for colors, spacing, breakpoints, etc.
+ */
+
+:root {
+  /* Primary Colors */
+  --primary-color: #444df2;
+  --secondary-color: #535af1;
+  --text-color: #000000;
+  // --background-color: #ffffff;
+  --background-color: #485882;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+
+  /* Font Families */
+  --font-family-primary: 'Nunito', sans-serif;
+}
