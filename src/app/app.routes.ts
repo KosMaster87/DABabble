@@ -7,4 +7,15 @@
 
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'demo',
+    pathMatch: 'full',
+  },
+  {
+    path: 'demo',
+    loadComponent: () =>
+      import('./components/primeng-demo.component').then((m) => m.PrimengDemoComponent),
+  },
+];
