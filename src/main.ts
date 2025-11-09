@@ -3,6 +3,7 @@
  * @description This file bootstraps the Angular application using the App component
  * and the application configuration defined in app.config.ts.
  * @module Main
+ * @author DABubble Team
  */
 
 import { bootstrapApplication } from '@angular/platform-browser';

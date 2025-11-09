@@ -3,6 +3,7 @@
  * @description This service provides core Firebase functionality for the DABubble application.
  * It manages Firestore database operations and Authentication.
  * @module FirebaseService
+ * @author DABubble Team
  */
 
 import { Injectable, inject } from '@angular/core';
