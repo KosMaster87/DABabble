@@ -1,166 +1,111 @@
 # 💬 DABubble
 
-DABubble ist eine moderne Slack-ähnliche Kommunikationsplattform, entwickelt mit Angular und Firebase. Die Anwendung ermöglicht es Teams, über Channels und Direktnachrichten effizient zu kommunizieren.
+A modern Slack-like communication platform built with Angular and Firebase.
 
 ## 🚀 Features
 
-### Benutzeraccount & Administration
-
-- ✅ Benutzerregistrierung und Login
-- ✅ Passwort-Zurücksetzen Funktion
-- ✅ Profilbearbeitung (Avatar & Name)
-- ✅ Responsive Menüführung
-- 🔄 Optional: Online-Status Anzeige
-
-### Channels & Direktnachrichten
-
-- 💬 Direktnachrichten zwischen Benutzern
-- 📝 Channel-basierte Gruppenkommunikation
-- 🧵 Thread-Unterstützung für Nachrichten
-- 😊 Emoticon-Reaktionen auf Nachrichten
-- 🔍 Nachrichtensuche
-- 🏷️ @-Mentions und #-Channel-Tagging
-
-### Channel Management
-
-- ➕ Channels erstellen und bearbeiten
-- 👥 Benutzer zu Channels einladen
-- 🚪 Channels verlassen
-- ✏️ Channel-Namen und -Beschreibungen editieren
+- 💬 Direct messages between users
+- 📝 Channel-based group communication
+- 🧵 Thread support for messages
+- 😊 Emoji reactions
+- 🔍 Message search
+- 👤 User registration and login
+- 📎 File uploads (images, documents)
 
 ## 🛠️ Tech Stack
 
 - **Frontend:** Angular 20.3.0
+- **State Management:** NgRx SignalStore
 - **Backend:** Firebase (Firestore, Authentication, Storage)
 - **Styling:** SCSS
-- **State Management:** RxJS
 - **TypeScript:** 5.9.2
 
-## 📋 Voraussetzungen
+## 📋 Prerequisites
 
-- Node.js (Version 18 oder höher)
-- npm oder yarn
+- Node.js (Version 18+)
 - Angular CLI (`npm install -g @angular/cli`)
 - Firebase Account
 
-## 🏁 Installation & Setup
-
-### 1. Repository klonen
+## 🏁 Installation
 
 ```bash
+# Clone repository
 git clone <repository-url>
 cd dababble
-```
 
-### 2. Dependencies installieren
-
-```bash
+# Install dependencies
 npm install
-```
 
-### 3. Firebase konfigurieren
-
-1. Erstelle ein Firebase-Projekt auf [firebase.google.com](https://firebase.google.com)
-2. Aktiviere folgende Services:
-   - Authentication (Email/Password, optional: Google)
-   - Firestore Database
-   - Storage
-3. Erstelle eine `src/environments/environment.ts` Datei:
-
-```typescript
-export const environment = {
-  production: false,
-  firebase: {
-    apiKey: 'YOUR_API_KEY',
-    authDomain: 'YOUR_AUTH_DOMAIN',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    appId: 'YOUR_APP_ID',
-  },
-};
-```
-
-### 4. Development Server starten
-
-```bash
+# Start development server
 npm start
-# oder
-ng serve
 ```
 
-Die Anwendung läuft unter `http://localhost:4200/`
+Application runs at `http://localhost:4200/`
 
-## 🏗️ Build
+## ⚙️ Firebase Configuration
 
-Für Production Build:
+1. Create a Firebase project at [firebase.google.com](https://firebase.google.com)
+2. Enable Authentication, Firestore, and Storage
+3. Copy `src/environments/environment.example.ts` to `environment.ts`
+4. Add your Firebase configuration
+
+## 📁 Project Structure
+
+```
+src/app/
+├── components/         # UI Components
+├── pages/              # Pages
+├── stores/             # NgRx SignalStores
+├── services/           # Services
+├── models/             # TypeScript Models
+└── guards/             # Route Guards
+```
+
+## 🏗️ Build & Test
 
 ```bash
+# Production build
 npm run build
-```
 
-Build-Artefakte werden im `dist/` Verzeichnis gespeichert.
-
-## 🧪 Tests
-
-Unit Tests ausführen:
-
-```bash
+# Unit tests
 npm test
 ```
 
-## 📁 Projektstruktur
+## 📖 Store Architecture
 
-```
-src/
-├── app/
-│   ├── components/         # Wiederverwendbare Komponenten
-│   ├── pages/              # Seiten-Komponenten
-│   ├── services/           # Services (Firebase, Auth, etc.)
-│   ├── models/             # TypeScript Interfaces & Models
-│   ├── guards/             # Route Guards
-│   ├── pipes/              # Custom Pipes
-│   └── shared/             # Shared Module & Komponenten
-├── assets/
-│   └── img/                # Bilder und Icons
-├── environments/           # Environment Configs
-└── styles.scss             # Globale Styles
-```
+This project uses **NgRx SignalStore** for state management:
 
-## 👥 Team & Workflow
+- `AuthStore` - Authentication
+- `UserStore` - User Management
+- `ChannelStore` - Channel CRUD
+- `MessageStore` - Message Operations
+- More specialized stores...
 
-### Git Workflow
+**Best Practice:**
 
-1. **Main Branch:** Stabiler Production-Code
-2. **Dev Branch:** Development Branch für Integration
-3. **Feature Branches:** `feature/feature-name` für neue Features
-4. **Bugfix Branches:** `bugfix/bug-description` für Bugfixes
+```typescript
+// In Components: Direct Inject
+private authStore = inject(AuthStore);
 
-### Branch Naming Convention
-
-```
-feature/user-authentication
-feature/channel-management
-feature/direct-messages
-bugfix/login-validation
-hotfix/critical-bug
+// In Services with many stores: useStores()
+private stores = useStores();
 ```
 
 ## 🤝 Contributing
 
-1. Feature Branch erstellen: `git checkout -b feature/amazing-feature`
-2. Änderungen committen: `git commit -m 'feat: Add amazing feature'`
-3. Branch pushen: `git push origin feature/amazing-feature`
-4. Pull Request erstellen
+1. Create feature branch: `git checkout -b feature/new-feature`
+2. Commit changes: `git commit -m 'feat: Add feature'`
+3. Create Pull Request
 
-## 📜 License
+## 📜 Coding Guidelines
 
-Dieses Projekt ist Teil einer Bildungsinitiative.
+See `.github/copilot-instructions.md` for detailed coding standards:
 
-## 📞 Support
-
-Bei Fragen oder Problemen erstelle ein Issue im GitHub Repository.
+- Functions max. 14 lines
+- Files max. 400 lines
+- Complete JSDoc documentation (English)
+- Use `inject()` instead of Constructor Injection
 
 ---
 
-**Entwickelt mit ❤️ von [Team Name]**
+**Built with ❤️ by the DABubble Team**

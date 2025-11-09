@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Environment configuration for production mode.
+ * @description This file contains the Firebase configuration settings
+ * for the DABubble application in production mode.
+ * @module Environment
+ * @author DABubble Team
+ */
+
 export const environment = {
   production: false,
   firebase: {

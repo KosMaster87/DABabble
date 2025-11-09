@@ -3,6 +3,7 @@
  * @description This component serves as the root of the DABubble application.
  * It initializes the Firebase service on startup.
  * @module AppComponent
+ * @author DABubble Team
  */
 
 import { Component, signal, inject } from '@angular/core';
