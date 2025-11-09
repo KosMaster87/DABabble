@@ -4,6 +4,7 @@
  * It sets up routing, error handling, and integrates Firebase services including
  * Firestore, Authentication, and Storage.
  * @module AppConfig
+ * @author DABubble Team
  */
 
 import {
