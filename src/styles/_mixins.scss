@@ -19,11 +19,23 @@
   }
 }
 
-/* Flexbox Center Mixin */
-@mixin flex-center {
+/* Flexbox Mixin with Parameters */
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+/* Flexbox Center Mixin (Shorthand) */
+@mixin flex-center {
+  @include flex(row, center, center);
+}
+
+/* Flexbox Column Stretch Mixin (Shorthand) */
+@mixin flex-column-stretch {
+  @include flex(column, flex-start, stretch);
 }
 
 /* Text Truncation */

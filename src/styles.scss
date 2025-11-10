@@ -4,7 +4,8 @@
  */
 
 /* Load SCSS Partials with @use (modern Sass) */
-@use 'styles/fonts';
+@use 'styles/fonts.nunito' as nunito;
+@use 'styles/fonts.figtree' as figtree;
 @use 'styles/variables';
 @use 'styles/mixins';
 
