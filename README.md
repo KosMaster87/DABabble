@@ -31,7 +31,7 @@ A modern Slack-like communication platform built with Angular and Firebase.
 ```bash
 # Clone repository
 git clone <repository-url>
-cd dababble
+cd dabubble
 
 # Install dependencies
 npm install
