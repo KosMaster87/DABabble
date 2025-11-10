@@ -18,7 +18,7 @@ import { environment } from '../environments/environment';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('dababble');
+  protected readonly title = signal('dabubble');
   private firebaseService = inject(FirebaseService);
 
   constructor() {

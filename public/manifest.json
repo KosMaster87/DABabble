@@ -1,6 +1,6 @@
 {
-  "name": "DABabble - Modern Messaging",
-  "short_name": "DABabble",
+  "name": "DABubble - Modern Messaging",
+  "short_name": "DABubble",
   "description": "Modern messaging application built with Angular",
   "start_url": "/",
   "scope": "/",
